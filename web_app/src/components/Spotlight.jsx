@@ -6,9 +6,9 @@ export default function Spotlight({ teamData }) {
   const stars = teamData.star_player_count || 0;
 
   return (
-    <div className="scroll-reveal">
+    <div className="scroll-reveal" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
       <h3 className="section-title" style={{ marginTop: 0 }}>{t('Team Spotlight')}</h3>
-      <div className="glass-card flex" style={{ padding: 0, overflow: 'hidden', alignItems: 'stretch' }}>
+      <div className="glass-card flex" style={{ padding: 0, overflow: 'hidden', alignItems: 'stretch', flex: 1 }}>
         <div style={{
           flex: 1,
           backgroundImage: `url('/spotlight.png')`,

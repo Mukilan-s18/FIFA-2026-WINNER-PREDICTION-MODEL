@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import PowerRankings from './components/PowerRankings';
 import Spotlight from './components/Spotlight';
 import TournamentProbabilities from './components/TournamentProbabilities';
+import BracketSimulator from './components/BracketSimulator';
 
 function App() {
   const [data, setData] = useState([]);
@@ -31,13 +32,16 @@ function App() {
       <Navbar />
       <Hero topTeam={topTeam} />
       
-      <div className="grid grid-cols-2 gap-8" style={{ marginTop: '2rem', paddingBottom: '4rem' }}>
+      <div style={{ marginTop: '2rem', paddingBottom: '2rem' }}>
         <PowerRankings data={sortedData} />
-        <div className="flex-col gap-8">
-          <Spotlight teamData={portugalData} />
-          <TournamentProbabilities data={sortedData} />
-        </div>
       </div>
+
+      <div className="grid grid-cols-2 gap-8" style={{ paddingBottom: '4rem' }}>
+        <Spotlight teamData={portugalData} />
+        <TournamentProbabilities data={sortedData} />
+      </div>
+
+      <BracketSimulator data={sortedData} />
     </div>
   );
 }
