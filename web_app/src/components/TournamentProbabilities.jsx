@@ -1,4 +1,7 @@
+import { useTranslation } from 'react-i18next';
+
 export default function TournamentProbabilities({ data }) {
+  const { t } = useTranslation();
   const top10 = data.slice(0, 10);
 
   const getFlag = (team) => {
@@ -11,13 +14,13 @@ export default function TournamentProbabilities({ data }) {
   };
 
   return (
-    <div>
+    <div className="scroll-reveal">
       <h3 className="section-title">Tournament Progression</h3>
       <div className="glass-card" style={{ padding: '1rem 1.5rem' }}>
         <table style={{ width: '100%', borderCollapse: 'collapse' }}>
           <thead>
             <tr>
-              <th style={{ textAlign: 'left', padding: '12px 0', borderBottom: '1px solid var(--glass-border-blue)', color: 'var(--text-muted)', fontFamily: 'var(--font-heading)', letterSpacing: '0.05em' }}>TEAM</th>
+              <th style={{ textAlign: 'left', padding: '12px 0', borderBottom: '1px solid var(--glass-border-blue)', color: 'var(--text-muted)', fontFamily: 'var(--font-heading)', letterSpacing: '0.05em' }}>{t('TEAM')}</th>
               <th style={{ textAlign: 'right', padding: '12px 0', borderBottom: '1px solid var(--glass-border-blue)', color: 'var(--text-muted)', fontFamily: 'var(--font-heading)', letterSpacing: '0.05em' }}>SEMI-FINAL</th>
               <th style={{ textAlign: 'right', padding: '12px 0', borderBottom: '1px solid var(--glass-border-blue)', color: 'var(--text-muted)', fontFamily: 'var(--font-heading)', letterSpacing: '0.05em' }}>FINAL</th>
               <th style={{ textAlign: 'right', padding: '12px 0', borderBottom: '1px solid var(--glass-border-blue)', color: 'var(--accent-gold)', fontFamily: 'var(--font-heading)', letterSpacing: '0.05em' }}>WIN</th>

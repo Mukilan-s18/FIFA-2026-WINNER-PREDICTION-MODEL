@@ -1,10 +1,13 @@
+import { useTranslation } from 'react-i18next';
+
 export default function Spotlight({ teamData }) {
+  const { t } = useTranslation();
   if (!teamData) return null;
   const stars = teamData.star_player_count || 0;
 
   return (
-    <div>
-      <h3 className="section-title" style={{ marginTop: 0 }}>Team Spotlight</h3>
+    <div className="scroll-reveal">
+      <h3 className="section-title" style={{ marginTop: 0 }}>{t('Team Spotlight')}</h3>
       <div className="glass-card flex" style={{ padding: 0, overflow: 'hidden', alignItems: 'stretch' }}>
         <div style={{
           flex: 1,
