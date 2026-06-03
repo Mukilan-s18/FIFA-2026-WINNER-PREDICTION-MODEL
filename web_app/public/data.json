@@ -6,7 +6,11 @@
     "semi_prob": 0.135,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 950.0,
+    "fifa_rating": 84.0,
+    "home_continent": "Europe",
+    "star_player_count": 3
   },
   {
     "team": "Argentina",
@@ -15,7 +19,11 @@
     "semi_prob": 0.1375,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 850.0,
+    "fifa_rating": 85.0,
+    "home_continent": "South America",
+    "star_player_count": 3
   },
   {
     "team": "France",
@@ -24,7 +32,11 @@
     "semi_prob": 0.1381,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 1250.0,
+    "fifa_rating": 86.0,
+    "home_continent": "Europe",
+    "star_player_count": 3
   },
   {
     "team": "England",
@@ -33,7 +45,11 @@
     "semi_prob": 0.1239,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 1400.0,
+    "fifa_rating": 85.0,
+    "home_continent": "Europe",
+    "star_player_count": 3
   },
   {
     "team": "Brazil",
@@ -42,7 +58,11 @@
     "semi_prob": 0.1358,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 1050.0,
+    "fifa_rating": 84.0,
+    "home_continent": "South America",
+    "star_player_count": 3
   },
   {
     "team": "Portugal",
@@ -51,7 +71,11 @@
     "semi_prob": 0.119,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 1000.0,
+    "fifa_rating": 84.0,
+    "home_continent": "Europe",
+    "star_player_count": 3
   },
   {
     "team": "Netherlands",
@@ -60,7 +84,11 @@
     "semi_prob": 0.128,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 750.0,
+    "fifa_rating": 83.0,
+    "home_continent": "Europe",
+    "star_player_count": 2
   },
   {
     "team": "Germany",
@@ -69,7 +97,11 @@
     "semi_prob": 0.1024,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 800.0,
+    "fifa_rating": 83.0,
+    "home_continent": "Europe",
+    "star_player_count": 2
   },
   {
     "team": "Colombia",
@@ -78,7 +110,11 @@
     "semi_prob": 0.0831,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 250.0,
+    "fifa_rating": 78.0,
+    "home_continent": "South America",
+    "star_player_count": 1
   },
   {
     "team": "Croatia",
@@ -87,7 +123,11 @@
     "semi_prob": 0.0819,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 350.0,
+    "fifa_rating": 80.0,
+    "home_continent": "Europe",
+    "star_player_count": 1
   },
   {
     "team": "Morocco",
@@ -96,7 +136,11 @@
     "semi_prob": 0.0648,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 300.0,
+    "fifa_rating": 79.0,
+    "home_continent": "Africa",
+    "star_player_count": 1
   },
   {
     "team": "Italy",
@@ -105,7 +149,11 @@
     "semi_prob": 0.0667,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 650.0,
+    "fifa_rating": 82.0,
+    "home_continent": "Europe",
+    "star_player_count": 2
   },
   {
     "team": "Japan",
@@ -114,7 +162,11 @@
     "semi_prob": 0.0622,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 250.0,
+    "fifa_rating": 78.0,
+    "home_continent": "Asia",
+    "star_player_count": 1
   },
   {
     "team": "Ecuador",
@@ -123,7 +175,11 @@
     "semi_prob": 0.0526,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 220.0,
+    "fifa_rating": 77.0,
+    "home_continent": "South America",
+    "star_player_count": 1
   },
   {
     "team": "Belgium",
@@ -132,7 +188,11 @@
     "semi_prob": 0.0624,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 450.0,
+    "fifa_rating": 80.0,
+    "home_continent": "Europe",
+    "star_player_count": 2
   },
   {
     "team": "Uruguay",
@@ -141,7 +201,11 @@
     "semi_prob": 0.065,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 450.0,
+    "fifa_rating": 80.0,
+    "home_continent": "South America",
+    "star_player_count": 2
   },
   {
     "team": "Mexico",
@@ -150,7 +214,11 @@
     "semi_prob": 0.0485,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 200.0,
+    "fifa_rating": 77.0,
+    "home_continent": "North America",
+    "star_player_count": 1
   },
   {
     "team": "Switzerland",
@@ -159,7 +227,11 @@
     "semi_prob": 0.0459,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 250.0,
+    "fifa_rating": 78.0,
+    "home_continent": "Europe",
+    "star_player_count": 1
   },
   {
     "team": "Denmark",
@@ -168,7 +240,11 @@
     "semi_prob": 0.0489,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 350.0,
+    "fifa_rating": 79.0,
+    "home_continent": "Europe",
+    "star_player_count": 1
   },
   {
     "team": "Turkey",
@@ -177,7 +253,11 @@
     "semi_prob": 0.0334,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 300.0,
+    "fifa_rating": 78.0,
+    "home_continent": "Europe",
+    "star_player_count": 1
   },
   {
     "team": "Senegal",
@@ -186,7 +266,11 @@
     "semi_prob": 0.0337,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 280.0,
+    "fifa_rating": 78.0,
+    "home_continent": "Africa",
+    "star_player_count": 1
   },
   {
     "team": "Nigeria",
@@ -195,7 +279,11 @@
     "semi_prob": 0.0317,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 350.0,
+    "fifa_rating": 78.0,
+    "home_continent": "Africa",
+    "star_player_count": 1
   },
   {
     "team": "Canada",
@@ -204,7 +292,11 @@
     "semi_prob": 0.022,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 180.0,
+    "fifa_rating": 75.0,
+    "home_continent": "North America",
+    "star_player_count": 1
   },
   {
     "team": "Iran",
@@ -213,7 +305,11 @@
     "semi_prob": 0.0165,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 50.0,
+    "fifa_rating": 74.0,
+    "home_continent": "Asia",
+    "star_player_count": 0
   },
   {
     "team": "Paraguay",
@@ -222,7 +318,11 @@
     "semi_prob": 0.0183,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 100.0,
+    "fifa_rating": 75.0,
+    "home_continent": "South America",
+    "star_player_count": 0
   },
   {
     "team": "Australia",
@@ -231,7 +331,11 @@
     "semi_prob": 0.0181,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 50.0,
+    "fifa_rating": 74.0,
+    "home_continent": "Asia",
+    "star_player_count": 0
   },
   {
     "team": "South Korea",
@@ -240,7 +344,11 @@
     "semi_prob": 0.0189,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 200.0,
+    "fifa_rating": 77.0,
+    "home_continent": "Asia",
+    "star_player_count": 1
   },
   {
     "team": "Scotland",
@@ -249,7 +357,11 @@
     "semi_prob": 0.0105,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 250.0,
+    "fifa_rating": 77.0,
+    "home_continent": "Europe",
+    "star_player_count": 1
   },
   {
     "team": "United States",
@@ -258,7 +370,11 @@
     "semi_prob": 0.0163,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 300.0,
+    "fifa_rating": 78.0,
+    "home_continent": "North America",
+    "star_player_count": 1
   },
   {
     "team": "Egypt",
@@ -267,7 +383,11 @@
     "semi_prob": 0.0114,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 120.0,
+    "fifa_rating": 74.0,
+    "home_continent": "Africa",
+    "star_player_count": 0
   },
   {
     "team": "Serbia",
@@ -276,7 +396,11 @@
     "semi_prob": 0.0085,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 280.0,
+    "fifa_rating": 78.0,
+    "home_continent": "Europe",
+    "star_player_count": 1
   },
   {
     "team": "Peru",
@@ -285,7 +409,11 @@
     "semi_prob": 0.0043,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 40.0,
+    "fifa_rating": 73.0,
+    "home_continent": "South America",
+    "star_player_count": 0
   },
   {
     "team": "Ivory Coast",
@@ -294,7 +422,11 @@
     "semi_prob": 0.0128,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 280.0,
+    "fifa_rating": 78.0,
+    "home_continent": "Africa",
+    "star_player_count": 1
   },
   {
     "team": "Uzbekistan",
@@ -303,7 +435,11 @@
     "semi_prob": 0.0058,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 30.0,
+    "fifa_rating": 71.0,
+    "home_continent": "Asia",
+    "star_player_count": 0
   },
   {
     "team": "Honduras",
@@ -312,7 +448,11 @@
     "semi_prob": 0.0026,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 15.0,
+    "fifa_rating": 70.0,
+    "home_continent": "North America",
+    "star_player_count": 0
   },
   {
     "team": "Panama",
@@ -321,7 +461,11 @@
     "semi_prob": 0.0061,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 20.0,
+    "fifa_rating": 71.0,
+    "home_continent": "North America",
+    "star_player_count": 0
   },
   {
     "team": "Poland",
@@ -330,7 +474,11 @@
     "semi_prob": 0.0049,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 200.0,
+    "fifa_rating": 76.0,
+    "home_continent": "Europe",
+    "star_player_count": 1
   },
   {
     "team": "Cameroon",
@@ -339,7 +487,11 @@
     "semi_prob": 0.0078,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 150.0,
+    "fifa_rating": 75.0,
+    "home_continent": "Africa",
+    "star_player_count": 0
   },
   {
     "team": "Tunisia",
@@ -348,7 +500,11 @@
     "semi_prob": 0.0057,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 60.0,
+    "fifa_rating": 73.0,
+    "home_continent": "Africa",
+    "star_player_count": 0
   },
   {
     "team": "Albania",
@@ -357,7 +513,11 @@
     "semi_prob": 0.0015,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 100.0,
+    "fifa_rating": 74.0,
+    "home_continent": "Europe",
+    "star_player_count": 0
   },
   {
     "team": "Bolivia",
@@ -366,7 +526,11 @@
     "semi_prob": 0.0009,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 15.0,
+    "fifa_rating": 70.0,
+    "home_continent": "South America",
+    "star_player_count": 0
   },
   {
     "team": "Jamaica",
@@ -375,7 +539,11 @@
     "semi_prob": 0.0019,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 80.0,
+    "fifa_rating": 73.0,
+    "home_continent": "North America",
+    "star_player_count": 0
   },
   {
     "team": "Bahrain",
@@ -384,7 +552,11 @@
     "semi_prob": 0.0004,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 10.0,
+    "fifa_rating": 68.0,
+    "home_continent": "Asia",
+    "star_player_count": 0
   },
   {
     "team": "Indonesia",
@@ -393,7 +565,11 @@
     "semi_prob": 0.0,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 15.0,
+    "fifa_rating": 68.0,
+    "home_continent": "Asia",
+    "star_player_count": 0
   },
   {
     "team": "Trinidad and Tobago",
@@ -402,7 +578,11 @@
     "semi_prob": 0.0001,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 10.0,
+    "fifa_rating": 68.0,
+    "home_continent": "North America",
+    "star_player_count": 0
   },
   {
     "team": "New Zealand",
@@ -411,7 +591,11 @@
     "semi_prob": 0.0007,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 25.0,
+    "fifa_rating": 70.0,
+    "home_continent": "Oceania",
+    "star_player_count": 0
   },
   {
     "team": "Saudi Arabia",
@@ -420,7 +604,11 @@
     "semi_prob": 0.0028,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 30.0,
+    "fifa_rating": 72.0,
+    "home_continent": "Asia",
+    "star_player_count": 0
   },
   {
     "team": "Qatar",
@@ -429,6 +617,10 @@
     "semi_prob": 0.0007,
     "group_win_prob": 0.5,
     "ro16_prob": 0.4,
-    "quarter_prob": 0.2
+    "quarter_prob": 0.2,
+    "squad_value_m": 20.0,
+    "fifa_rating": 71.0,
+    "home_continent": "Asia",
+    "star_player_count": 0
   }
 ]

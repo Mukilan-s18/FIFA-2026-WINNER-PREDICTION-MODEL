@@ -3,6 +3,26 @@ export default function Hero({ topTeam }) {
   const winProb = (topTeam.win_prob * 100).toFixed(1);
   const finalProb = (topTeam.final_prob * 100).toFixed(1);
 
+  // Heuristic: The Golden Boot winner usually comes from the team that makes it the furthest (most matches played).
+  // We predict the star forward of the highest probability team to win the Golden Boot.
+  const getStarPlayer = (team) => {
+    const stars = {
+      'Spain': 'Lamine Yamal',
+      'Argentina': 'Lionel Messi',
+      'France': 'Kylian Mbappé',
+      'England': 'Harry Kane',
+      'Brazil': 'Vinícius Júnior',
+      'Portugal': 'Cristiano Ronaldo',
+      'Netherlands': 'Cody Gakpo',
+      'Germany': 'Jamal Musiala',
+      'Colombia': 'Luis Díaz',
+      'Croatia': 'Luka Modrić'
+    };
+    return stars[team] || 'Top Goalscorer';
+  };
+
+  const goldenBoot = getStarPlayer(topTeam.team);
+
   return (
     <div className="scroll-reveal" style={{
       position: 'relative',
@@ -53,18 +73,18 @@ export default function Hero({ topTeam }) {
           <span>WORLD CUP</span> <br />
           PREDICTION
         </h1>
-        <p className="text-muted" style={{ fontSize: '1.2rem', marginTop: '1.5rem', maxWidth: '600px' }}>
+        <p className="text-muted" style={{ fontSize: '1.2rem', marginTop: '1.5rem', maxWidth: '480px' }}>
           Our advanced machine learning ensemble model has analyzed over 30,000 international matches to bring you the most accurate predictions for the FIFA 2026 World Cup.
         </p>
       </div>
 
       <div className="glass-card scroll-reveal" style={{
         position: 'absolute',
-        bottom: '30px',
-        right: '40px',
+        bottom: '15px',
+        right: '15px',
         display: 'flex',
-        gap: '3rem',
-        padding: '1.5rem 2.5rem',
+        gap: '2rem',
+        padding: '1.5rem 2rem',
         zIndex: 3
       }}>
         <div className="flex-col">
@@ -78,6 +98,10 @@ export default function Hero({ topTeam }) {
         <div className="flex-col">
           <span style={{ fontSize: '0.9rem', textTransform: 'uppercase', fontWeight: 700, color: '#FFFFFF', letterSpacing: '1px', textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>Reach Final</span>
           <span style={{ fontSize: '2.5rem', fontFamily: 'var(--font-heading)', lineHeight: 1.2 }}>{finalProb}%</span>
+        </div>
+        <div className="flex-col">
+          <span style={{ fontSize: '0.9rem', textTransform: 'uppercase', fontWeight: 700, color: '#FFFFFF', letterSpacing: '1px', textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>Golden Boot</span>
+          <span className="text-gold" style={{ fontSize: '1.8rem', fontFamily: 'var(--font-heading)', lineHeight: 1.2, textShadow: '0 0 10px rgba(255, 215, 0, 0.3)', whiteSpace: 'nowrap' }}>{goldenBoot}</span>
         </div>
       </div>
     </div>
