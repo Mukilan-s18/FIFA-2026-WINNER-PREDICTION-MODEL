@@ -1,17 +1,17 @@
 # FIFA 2026 WC Prediction — Model Evaluation Report
 
-Generated: 2026-06-02 12:40
+Generated: 2026-06-03 12:45
 
 ## Model Comparison
 
 | model               |   accuracy |   log_loss |   brier_score_avg |      rps |
 |:--------------------|-----------:|-----------:|------------------:|---------:|
-| xgboost             |   0.620155 |   0.872981 |          0.1696   | 0.115465 |
-| lightgbm            |   0.617571 |   0.873462 |          0.169692 | 0.115722 |
-| random_forest       |   0.608958 |   0.874717 |          0.169939 | 0.115946 |
-| logistic_regression |   0.615848 |   0.878674 |          0.17122  | 0.116455 |
+| xgboost             |   0.614987 |   0.871698 |          0.169302 | 0.115255 |
+| lightgbm            |   0.61671  |   0.873361 |          0.169679 | 0.115674 |
+| random_forest       |   0.607235 |   0.87515  |          0.170064 | 0.116014 |
+| logistic_regression |   0.611542 |   0.879313 |          0.171349 | 0.116579 |
 
-**Best model by log loss**: xgboost (log_loss = 0.8730)
+**Best model by log loss**: xgboost (log_loss = 0.8717)
 
 ## Metrics Explained
 
