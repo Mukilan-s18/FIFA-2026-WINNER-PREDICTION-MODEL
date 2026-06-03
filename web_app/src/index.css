@@ -213,12 +213,17 @@ h1, h2, h3, h4, h5, h6 {
   top: 25%;
   bottom: 25%;
   width: 10px;
-  border: 2px solid var(--accent-blue);
+  border: 2px solid rgba(255, 255, 255, 0.1);
   border-left: none;
   border-radius: 0 4px 4px 0;
-  opacity: 0.4;
-  box-shadow: 2px 0 10px rgba(0, 229, 255, 0.2);
+  opacity: 0.9;
+  transition: all 0.3s ease;
 }
+.bracket-pair-left.active-path::after {
+  border-color: var(--accent-gold);
+  box-shadow: 2px 0 5px black, 2px 0 15px rgba(255, 215, 0, 0.3);
+}
+
 .bracket-pair-right::after {
   content: '';
   position: absolute;
@@ -226,11 +231,15 @@ h1, h2, h3, h4, h5, h6 {
   top: 25%;
   bottom: 25%;
   width: 10px;
-  border: 2px solid var(--accent-blue);
+  border: 2px solid rgba(255, 255, 255, 0.1);
   border-right: none;
   border-radius: 4px 0 0 4px;
-  opacity: 0.4;
-  box-shadow: -2px 0 10px rgba(0, 229, 255, 0.2);
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+.bracket-pair-right.active-path::after {
+  border-color: var(--accent-gold);
+  box-shadow: -2px 0 5px black, -2px 0 15px rgba(255, 215, 0, 0.3);
 }
 
 .bracket-line-left {
@@ -239,29 +248,38 @@ h1, h2, h3, h4, h5, h6 {
   top: 50%;
   width: 10px;
   height: 2px;
-  background: var(--accent-blue);
-  opacity: 0.4;
-  box-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 0.9;
+  transition: all 0.3s ease;
 }
+.bracket-line-left.active-path {
+  background: var(--accent-gold);
+  box-shadow: 0 2px 5px black, 0 0 10px rgba(255, 215, 0, 0.4);
+}
+
 .bracket-line-right {
   position: absolute;
   left: -20px;
   top: 50%;
   width: 10px;
   height: 2px;
-  background: var(--accent-blue);
-  opacity: 0.4;
-  box-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+.bracket-line-right.active-path {
+  background: var(--accent-gold);
+  box-shadow: 0 2px 5px black, 0 0 10px rgba(255, 215, 0, 0.4);
 }
 
 @keyframes pop-glow {
-  0% { transform: scale(1); box-shadow: 0 0 0 rgba(0, 229, 255, 0); }
-  50% { transform: scale(1.05); box-shadow: 0 0 15px rgba(0, 229, 255, 0.6); }
-  100% { transform: scale(1); box-shadow: 0 0 0 rgba(0, 229, 255, 0); }
+  0% { transform: scale(1); box-shadow: 0 0 0 rgba(255, 215, 0, 0); }
+  50% { transform: scale(1.05); box-shadow: 0 0 15px rgba(255, 215, 0, 0.6); }
+  100% { transform: scale(1); box-shadow: 0 0 0 rgba(255, 215, 0, 0); }
 }
 .winner-pop {
   animation: pop-glow 0.6s ease-out;
-  color: var(--accent-blue) !important;
+  color: var(--accent-gold) !important;
 }
 
 .flag-img {

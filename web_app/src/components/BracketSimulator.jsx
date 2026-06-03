@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import confetti from 'canvas-confetti';
 
 const getCountryCode = (teamName) => {
   const map = {
@@ -102,6 +103,33 @@ export default function BracketSimulator({ data }) {
     setBracket(currentBracket);
     
     setIsSimulating(false);
+    
+    // Trigger celebratory confetti for the winner
+    const duration = 3500;
+    const end = Date.now() + duration;
+
+    (function frame() {
+      confetti({
+        particleCount: 5,
+        angle: 60,
+        spread: 55,
+        origin: { x: 0 },
+        colors: ['#FFD700', '#ffffff', '#00e5ff'],
+        zIndex: 9999
+      });
+      confetti({
+        particleCount: 5,
+        angle: 120,
+        spread: 55,
+        origin: { x: 1 },
+        colors: ['#FFD700', '#ffffff', '#00e5ff'],
+        zIndex: 9999
+      });
+
+      if (Date.now() < end) {
+        requestAnimationFrame(frame);
+      }
+    }());
   };
 
   if (!bracket) return null;
@@ -128,7 +156,7 @@ export default function BracketSimulator({ data }) {
     );
   };
 
-  const Column = ({ matches, title, side }) => {
+  const Column = ({ matches, title, side, nextRound }) => {
     const pairs = [];
     for (let i = 0; i < matches.length; i += 2) {
       if (i + 1 < matches.length) {
@@ -142,13 +170,17 @@ export default function BracketSimulator({ data }) {
       <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-around', margin: '0 10px', minWidth: '110px' }}>
         <div style={{ textAlign: 'center', marginBottom: '12px', color: 'var(--accent-blue)', fontWeight: 'bold', fontSize: '0.8rem', letterSpacing: '1px' }}>{title}</div>
         <div style={{ display: 'flex', flexDirection: 'column', flex: 1, justifyItems: 'stretch' }}>
-          {pairs.map((pair, idx) => (
-            <div key={idx} className={pair.length === 2 && matches.length > 1 ? `bracket-pair-${side}` : ''} style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-around' }}>
-              <Match match={pair[0]} />
-              {pair.length === 2 && <Match match={pair[1]} />}
-              {pair.length === 2 && matches.length > 1 && <div className={`bracket-line-${side}`}></div>}
-            </div>
-          ))}
+          {pairs.map((pair, idx) => {
+            const isAdvanced = nextRound && nextRound[idx] && nextRound[idx][0] !== null;
+            const activeClass = isAdvanced ? 'active-path' : '';
+            return (
+              <div key={idx} className={pair.length === 2 && matches.length > 1 ? `bracket-pair-${side} ${activeClass}` : ''} style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-around' }}>
+                <Match match={pair[0]} />
+                {pair.length === 2 && <Match match={pair[1]} />}
+                {pair.length === 2 && matches.length > 1 && <div className={`bracket-line-${side} ${activeClass}`}></div>}
+              </div>
+            );
+          })}
         </div>
       </div>
     );
@@ -163,8 +195,8 @@ export default function BracketSimulator({ data }) {
 
   return (
     <div className="scroll-reveal" style={{ marginTop: '2rem' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
-        <h3 className="section-title" style={{ margin: 0 }}>Tournament Simulator</h3>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '20px' }}>
+        <h2 className="heading-secondary" style={{ fontSize: '2rem' }}>TOURNAMENT BRACKET</h2>
         <button 
           onClick={startSimulation} 
           disabled={isSimulating}
@@ -182,13 +214,20 @@ export default function BracketSimulator({ data }) {
         </button>
       </div>
 
-      <div className="glass-card" style={{ padding: '2rem 1rem', display: 'flex', justifyContent: 'center', overflowX: 'auto', minHeight: '600px' }}>
+      <div className="glass-card" style={{ 
+        padding: '2rem 1rem', 
+        display: 'flex', 
+        justifyContent: 'center', 
+        overflowX: 'auto', 
+        minHeight: '600px',
+        background: 'radial-gradient(circle at center, rgba(10, 15, 25, 0.6) 0%, rgba(10, 15, 25, 0.95) 100%), url(/World-Cup.png) center/cover no-repeat'
+      }}>
         <div style={{ display: 'flex', width: 'max-content' }}>
           {/* Left Side */}
-          <Column matches={r32L} title="R32" side="left" />
-          <Column matches={r16L} title="R16" side="left" />
-          <Column matches={qfL} title="QF" side="left" />
-          <Column matches={sfL} title="SF" side="left" />
+          <Column matches={r32L} nextRound={r16L} title="R32" side="left" />
+          <Column matches={r16L} nextRound={qfL} title="R16" side="left" />
+          <Column matches={qfL} nextRound={sfL} title="QF" side="left" />
+          <Column matches={sfL} nextRound={[bracket.final[0]]} title="SF" side="left" />
           
           {/* Final & Winner Center */}
           <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', margin: '0 20px', minWidth: '150px' }}>
@@ -214,9 +253,9 @@ export default function BracketSimulator({ data }) {
 
           {/* Right Side */}
           <Column matches={sfR} title="SF" side="right" />
-          <Column matches={qfR} title="QF" side="right" />
-          <Column matches={r16R} title="R16" side="right" />
-          <Column matches={r32R} title="R32" side="right" />
+          <Column matches={qfR} nextRound={sfR} title="QF" side="right" />
+          <Column matches={r16R} nextRound={qfR} title="R16" side="right" />
+          <Column matches={r32R} nextRound={r16R} title="R32" side="right" />
         </div>
       </div>
     </div>

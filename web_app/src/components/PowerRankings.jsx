@@ -1,4 +1,4 @@
-const getCountryInfo = (teamName) => {
+export const getCountryInfo = (teamName) => {
   const map = {
     'Spain': { code: 'es', playerId: 201153 },
     'Serbia': { code: 'rs', playerId: 199434 },
@@ -32,6 +32,22 @@ const getCountryInfo = (teamName) => {
     'Switzerland': { code: 'ch', playerId: 199503 },
     'Belgium': { code: 'be', playerId: 192985 },
     'Mexico': { code: 'mx', playerId: 235844 },
+    'New Zealand': { code: 'nz', playerId: null },
+    'Trinidad and Tobago': { code: 'tt', playerId: null },
+    'Uzbekistan': { code: 'uz', playerId: null },
+    'Jamaica': { code: 'jm', playerId: null },
+    'Bolivia': { code: 'bo', playerId: null },
+    'Bahrain': { code: 'bh', playerId: null },
+    'Panama': { code: 'pa', playerId: null },
+    'Albania': { code: 'al', playerId: null },
+    'Saudi Arabia': { code: 'sa', playerId: null },
+    'Indonesia': { code: 'id', playerId: null },
+    'Cameroon': { code: 'cm', playerId: null },
+    'Honduras': { code: 'hn', playerId: null },
+    'Ivory Coast': { code: 'ci', playerId: null },
+    'Tunisia': { code: 'tn', playerId: null },
+    'Qatar': { code: 'qa', playerId: null },
+    'Poland': { code: 'pl', playerId: null }
   };
   return map[teamName] || { code: null, playerId: null };
 };
@@ -104,8 +120,8 @@ export default function PowerRankings({ data }) {
                       bottom: '5px',
                       right: '-15px',
                       height: '170px',
-                      opacity: 0.9,
-                      filter: 'drop-shadow(-5px 0px 8px rgba(0,0,0,0.8))'
+                      opacity: 1,
+                      filter: 'drop-shadow(-5px 0px 8px rgba(0,0,0,0.8)) brightness(1.15) contrast(1.05)'
                     }}
                   />
                   <div style={{

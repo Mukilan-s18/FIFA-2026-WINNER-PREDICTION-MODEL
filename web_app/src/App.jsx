@@ -23,9 +23,6 @@ function App() {
   // Find the top team for the hero
   const sortedData = [...data].sort((a, b) => b.win_prob - a.win_prob);
   const topTeam = sortedData[0];
-  
-  // Find Portugal for the spotlight
-  const portugalData = data.find(team => team.team === 'Portugal') || sortedData[1];
 
   return (
     <div className="app-container">
@@ -37,7 +34,7 @@ function App() {
       </div>
 
       <div className="grid grid-cols-2 gap-8" style={{ paddingBottom: '4rem' }}>
-        <Spotlight teamData={portugalData} />
+        <Spotlight teams={sortedData.slice(0, 10)} />
         <TournamentProbabilities data={sortedData} />
       </div>
 

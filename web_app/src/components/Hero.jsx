@@ -68,15 +68,15 @@ export default function Hero({ topTeam }) {
         zIndex: 3
       }}>
         <div className="flex-col">
-          <span className="text-muted" style={{ fontSize: '0.85rem', textTransform: 'uppercase', fontWeight: 600 }}>Favorite</span>
+          <span style={{ fontSize: '0.9rem', textTransform: 'uppercase', fontWeight: 700, color: '#FFFFFF', letterSpacing: '1px', textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>Favorite</span>
           <span className="text-gold" style={{ fontSize: '2.5rem', fontFamily: 'var(--font-heading)', lineHeight: 1.2 }}>{topTeam.team.toUpperCase()}</span>
         </div>
         <div className="flex-col">
-          <span className="text-muted" style={{ fontSize: '0.85rem', textTransform: 'uppercase', fontWeight: 600 }}>Win Probability</span>
+          <span style={{ fontSize: '0.9rem', textTransform: 'uppercase', fontWeight: 700, color: '#FFFFFF', letterSpacing: '1px', textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>Win Probability</span>
           <span className="text-blue" style={{ fontSize: '2.5rem', fontFamily: 'var(--font-heading)', lineHeight: 1.2, textShadow: '0 0 10px rgba(0, 229, 255, 0.3)' }}>{winProb}%</span>
         </div>
         <div className="flex-col">
-          <span className="text-muted" style={{ fontSize: '0.85rem', textTransform: 'uppercase', fontWeight: 600 }}>Reach Final</span>
+          <span style={{ fontSize: '0.9rem', textTransform: 'uppercase', fontWeight: 700, color: '#FFFFFF', letterSpacing: '1px', textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>Reach Final</span>
           <span style={{ fontSize: '2.5rem', fontFamily: 'var(--font-heading)', lineHeight: 1.2 }}>{finalProb}%</span>
         </div>
       </div>

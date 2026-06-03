@@ -162,6 +162,7 @@ def build_logistic_regression() -> Pipeline:
             multi_class="multinomial",
             solver="lbfgs",
             random_state=RANDOM_SEED,
+            class_weight="balanced",
         )),
     ])
 
@@ -175,6 +176,7 @@ def build_random_forest() -> RandomForestClassifier:
         min_samples_leaf=5,
         random_state=RANDOM_SEED,
         n_jobs=-1,
+        class_weight="balanced",
     )
 
 
@@ -222,6 +224,7 @@ def build_lightgbm():
         min_child_samples=10,
         reg_alpha=0.1,
         reg_lambda=1.0,
+        class_weight="balanced",
         objective="multiclass",
         num_class=3,
         random_state=RANDOM_SEED,
@@ -285,7 +288,7 @@ def run_loto_cv(
     return np.mean(losses) if losses else 999.0
 
 
-def tune_logistic_regression(df: pd.DataFrame, feature_names: list[str], n_trials: int = 15) -> dict:
+def tune_logistic_regression(df: pd.DataFrame, feature_names: list[str], n_trials: int = 50) -> dict:
     """Tune Logistic Regression C hyperparameter using Optuna."""
     def objective(trial):
         c = trial.suggest_float("C", 1e-4, 1e2, log=True)
@@ -310,7 +313,7 @@ def tune_logistic_regression(df: pd.DataFrame, feature_names: list[str], n_trial
     return study.best_params
 
 
-def tune_random_forest(df: pd.DataFrame, feature_names: list[str], n_trials: int = 15) -> dict:
+def tune_random_forest(df: pd.DataFrame, feature_names: list[str], n_trials: int = 50) -> dict:
     """Tune Random Forest hyperparameters using Optuna."""
     def objective(trial):
         n_estimators = trial.suggest_int("n_estimators", 100, 300, step=100)
@@ -335,14 +338,16 @@ def tune_random_forest(df: pd.DataFrame, feature_names: list[str], n_trials: int
     return study.best_params
 
 
-def tune_xgboost(df: pd.DataFrame, feature_names: list[str], n_trials: int = 15) -> dict:
+def tune_xgboost(df: pd.DataFrame, feature_names: list[str], n_trials: int = 50) -> dict:
     """Tune XGBoost hyperparameters using Optuna."""
     def objective(trial):
-        n_estimators = trial.suggest_int("n_estimators", 100, 300, step=100)
-        max_depth = trial.suggest_int("max_depth", 3, 6)
-        learning_rate = trial.suggest_float("learning_rate", 0.01, 0.1, log=True)
-        subsample = trial.suggest_float("subsample", 0.7, 1.0)
-        colsample_bytree = trial.suggest_float("colsample_bytree", 0.7, 1.0)
+        n_estimators = trial.suggest_int("n_estimators", 100, 500, step=100)
+        max_depth = trial.suggest_int("max_depth", 3, 9)
+        learning_rate = trial.suggest_float("learning_rate", 0.005, 0.2, log=True)
+        subsample = trial.suggest_float("subsample", 0.6, 1.0)
+        colsample_bytree = trial.suggest_float("colsample_bytree", 0.6, 1.0)
+        min_child_weight = trial.suggest_int("min_child_weight", 1, 7)
+        gamma = trial.suggest_float("gamma", 0.0, 0.5)
         
         def builder():
             if not HAS_XGBOOST:
@@ -359,6 +364,8 @@ def tune_xgboost(df: pd.DataFrame, feature_names: list[str], n_trials: int = 15)
                 learning_rate=learning_rate,
                 subsample=subsample,
                 colsample_bytree=colsample_bytree,
+                min_child_weight=min_child_weight,
+                gamma=gamma,
                 objective="multi:softprob",
                 num_class=3,
                 eval_metric="mlogloss",
@@ -374,17 +381,19 @@ def tune_xgboost(df: pd.DataFrame, feature_names: list[str], n_trials: int = 15)
     return study.best_params
 
 
-def tune_lightgbm(df: pd.DataFrame, feature_names: list[str], n_trials: int = 15) -> dict:
+def tune_lightgbm(df: pd.DataFrame, feature_names: list[str], n_trials: int = 50) -> dict:
     """Tune LightGBM hyperparameters using Optuna."""
     if not HAS_LIGHTGBM:
         return {}
         
     def objective(trial):
-        n_estimators = trial.suggest_int("n_estimators", 100, 300, step=100)
-        max_depth = trial.suggest_int("max_depth", 3, 6)
-        learning_rate = trial.suggest_float("learning_rate", 0.01, 0.1, log=True)
-        subsample = trial.suggest_float("subsample", 0.7, 1.0)
-        colsample_bytree = trial.suggest_float("colsample_bytree", 0.7, 1.0)
+        n_estimators = trial.suggest_int("n_estimators", 100, 500, step=100)
+        max_depth = trial.suggest_int("max_depth", 3, 9)
+        learning_rate = trial.suggest_float("learning_rate", 0.005, 0.2, log=True)
+        subsample = trial.suggest_float("subsample", 0.6, 1.0)
+        colsample_bytree = trial.suggest_float("colsample_bytree", 0.6, 1.0)
+        min_child_weight = trial.suggest_int("min_child_weight", 1, 7)
+        gamma = trial.suggest_float("gamma", 0.0, 0.5)
         
         def builder():
             return lgb.LGBMClassifier(
@@ -542,6 +551,8 @@ def train_all_models(
                 learning_rate=best_params["learning_rate"],
                 subsample=best_params["subsample"],
                 colsample_bytree=best_params["colsample_bytree"],
+                min_child_weight=best_params.get("min_child_weight", 5),
+                gamma=best_params.get("gamma", 0.0),
                 objective="multi:softprob",
                 num_class=3,
                 eval_metric="mlogloss",
