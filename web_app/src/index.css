@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
 
 :root {
-  --bg-color: #0a0a0f;
-  --bg-gradient: radial-gradient(circle at top, #161823, #0a0a0f 80%);
+  --bg-color: #070708;
+  --bg-gradient: radial-gradient(circle at top, #15151a, #070708 80%);
   --text-color: #F8FAFC;
   --text-muted: #94A3B8;
-  --accent-blue: #00e5ff;
-  --accent-blue-glow: rgba(0, 229, 255, 0.4);
-  --accent-gold: #FFD700;
+  --accent-blue: #D4AF37;
+  --accent-blue-glow: rgba(212, 175, 55, 0.4);
+  --accent-gold: #D4AF37;
   --font-body: 'Inter', sans-serif;
   --font-heading: 'Oswald', sans-serif;
   
-  --glass-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
-  --glass-border-light: rgba(255, 255, 255, 0.15);
-  --glass-border-blue: rgba(0, 229, 255, 0.3);
+  --glass-bg: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%);
+  --glass-border-light: rgba(212, 175, 55, 0.25);
+  --glass-border-blue: rgba(212, 175, 55, 0.4); /* Repurposed to gold for section borders */
 }
 
 * {
@@ -54,13 +54,43 @@ h1, h2, h3, h4, h5, h6 {
 .heading-primary {
   color: var(--text-color);
   font-size: 3.5rem;
-  text-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
   margin-bottom: 1rem;
   letter-spacing: 0.05em;
 }
+
+/* Button Styles */
+.btn-gold {
+  background: linear-gradient(90deg, #D4AF37, #FFDF73);
+  color: #000;
+  border: 1px solid transparent;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.btn-gold:hover:not(:disabled) {
+  transform: scale(1.05);
+  background: #070708;
+  color: #D4AF37;
+  border: 1px solid #D4AF37;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+}
+
+.btn-gold:disabled {
+  background: #555;
+  color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+  box-shadow: none;
+}
+
 .heading-primary span {
-  color: var(--accent-blue);
-  text-shadow: 0 0 15px var(--accent-blue-glow);
+  color: var(--accent-gold);
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
 }
 .section-title {
   color: var(--text-color);
@@ -91,7 +121,7 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom-color: var(--glass-border-blue);
   border-radius: 16px;
   padding: 32px;
-  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
   position: relative;
   overflow: hidden;
@@ -111,8 +141,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .glass-card:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 15px 50px -10px rgba(0, 229, 255, 0.2);
-  border-color: rgba(0, 229, 255, 0.4);
+  box-shadow: 0 15px 50px -10px rgba(212, 175, 55, 0.2);
+  border-color: rgba(212, 175, 55, 0.4);
 }
 
 .glass-card:hover::before {

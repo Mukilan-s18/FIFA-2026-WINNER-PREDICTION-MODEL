@@ -63,11 +63,11 @@ export default function Spotlight({ teams }) {
             </div>
             <div className="flex justify-between" style={{ marginBottom: '0.75rem' }}>
               <span className="text-muted">FIFA Rating:</span>
-              <span className="text-blue text-lg" style={{ fontWeight: 600 }}>{teamData.fifa_rating || 'N/A'}</span>
+              <span className="text-gold text-lg" style={{ fontWeight: 600 }}>{teamData.fifa_rating || 'N/A'}</span>
             </div>
             <div className="flex justify-between" style={{ marginBottom: '0.75rem' }}>
               <span className="text-muted">Squad Value:</span>
-              <span className="text-blue text-lg" style={{ fontWeight: 600 }}>€{teamData.squad_value_m || 'N/A'}M</span>
+              <span className="text-gold text-lg" style={{ fontWeight: 600 }}>€{teamData.squad_value_m || 'N/A'}M</span>
             </div>
             <div className="flex justify-between" style={{ marginBottom: '0.75rem' }}>
               <span className="text-muted">Continent:</span>

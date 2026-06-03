@@ -114,7 +114,7 @@ export default function BracketSimulator({ data }) {
         angle: 60,
         spread: 55,
         origin: { x: 0 },
-        colors: ['#FFD700', '#ffffff', '#00e5ff'],
+        colors: ['#FFD700', '#ffffff', '#111111'],
         zIndex: 9999
       });
       confetti({
@@ -122,7 +122,7 @@ export default function BracketSimulator({ data }) {
         angle: 120,
         spread: 55,
         origin: { x: 1 },
-        colors: ['#FFD700', '#ffffff', '#00e5ff'],
+        colors: ['#FFD700', '#ffffff', '#111111'],
         zIndex: 9999
       });
 
@@ -168,7 +168,7 @@ export default function BracketSimulator({ data }) {
 
     return (
       <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-around', margin: '0 10px', minWidth: '110px' }}>
-        <div style={{ textAlign: 'center', marginBottom: '12px', color: 'var(--accent-blue)', fontWeight: 'bold', fontSize: '0.8rem', letterSpacing: '1px' }}>{title}</div>
+        <div style={{ textAlign: 'center', marginBottom: '12px', color: 'var(--accent-gold)', fontWeight: 'bold', fontSize: '0.8rem', letterSpacing: '1px' }}>{title}</div>
         <div style={{ display: 'flex', flexDirection: 'column', flex: 1, justifyItems: 'stretch' }}>
           {pairs.map((pair, idx) => {
             const isAdvanced = nextRound && nextRound[idx] && nextRound[idx][0] !== null;
@@ -200,15 +200,7 @@ export default function BracketSimulator({ data }) {
         <button 
           onClick={startSimulation} 
           disabled={isSimulating}
-          style={{
-            background: isSimulating ? '#555' : 'linear-gradient(90deg, var(--accent-blue), #00ffcc)',
-            color: '#000', border: 'none', padding: '12px 24px', borderRadius: '8px',
-            fontWeight: 700, cursor: isSimulating ? 'not-allowed' : 'pointer',
-            transition: 'opacity 0.2s, transform 0.2s', opacity: isSimulating ? 0.7 : 1,
-            boxShadow: '0 4px 15px rgba(0, 229, 255, 0.3)'
-          }}
-          onMouseOver={(e) => { if (!isSimulating) e.currentTarget.style.transform = 'scale(1.05)' }}
-          onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+          className="btn-gold"
         >
           {isSimulating ? 'Simulating...' : 'Simulate Tournament'}
         </button>

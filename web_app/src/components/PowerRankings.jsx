@@ -63,7 +63,7 @@ export default function PowerRankings({ data }) {
         overflowX: 'auto', 
         paddingBottom: '20px',
         scrollbarWidth: 'thin',
-        scrollbarColor: 'var(--accent-blue) rgba(0,0,0,0.2)'
+        scrollbarColor: 'var(--accent-gold) rgba(0,0,0,0.2)'
       }}>
         {top20.map((team, idx) => {
           const width = (team.win_prob / maxProb) * 100;
@@ -151,9 +151,9 @@ export default function PowerRankings({ data }) {
                   <div style={{
                     height: '100%',
                     width: `${width}%`,
-                    background: 'linear-gradient(90deg, var(--accent-blue), #00ffcc)',
+                    background: 'linear-gradient(90deg, #D4AF37, #FFDF73)',
                     borderRadius: '4px',
-                    boxShadow: '0 0 10px rgba(0, 229, 255, 0.5)'
+                    boxShadow: '0 0 10px rgba(212, 175, 55, 0.5)'
                   }} />
                 </div>
                 <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'flex', gap: '12px' }}>
