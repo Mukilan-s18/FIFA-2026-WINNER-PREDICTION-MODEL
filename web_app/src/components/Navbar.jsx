@@ -12,7 +12,7 @@ export default function Navbar() {
     }}>
       <img src="/trophy.png?v=2" alt="World Cup Trophy" style={{ height: '60px', objectFit: 'contain', mixBlendMode: 'screen', filter: 'brightness(1.1)' }} />
       <h2 style={{ margin: 0, fontSize: '2.2rem', borderBottom: 'none', padding: 0, color: 'var(--accent-gold)', letterSpacing: '0.05em', fontWeight: 'bold' }}>
-        FIFA WORLDCUP 2026
+        FIFA WC 2026 Predictor
       </h2>
     </nav>
   );

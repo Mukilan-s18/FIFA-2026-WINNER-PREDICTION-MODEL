@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site": "fifa-wc-26-predictor-mukil",
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
