@@ -11,7 +11,7 @@ export default function Hero({ topTeam }) {
 
   return (
     <>
-      <div className="scroll-reveal" style={{
+      <div className="scroll-reveal hero-container" style={{
         position: 'relative',
         height: '600px',
         borderRadius: '24px',
@@ -45,7 +45,7 @@ export default function Hero({ topTeam }) {
         zIndex: 2
       }} />
 
-      <div style={{
+      <div className="hero-text-container" style={{
         position: 'relative',
         zIndex: 3,
         padding: '60px',
@@ -55,7 +55,7 @@ export default function Hero({ topTeam }) {
         justifyContent: 'center',
         maxWidth: '800px'
       }}>
-        <h1 className="heading-primary" style={{ fontSize: '4.5rem', lineHeight: 1.1 }}>
+        <h1 className="heading-primary hero-country-name" style={{ fontSize: '4.5rem', lineHeight: 1.1 }}>
           THE ULTIMATE <br />
           <span>WORLD CUP</span> <br />
           PREDICTION
@@ -66,7 +66,7 @@ export default function Hero({ topTeam }) {
       </div>
       </div>
 
-      <div className="glass-card scroll-reveal" style={{
+      <div className="glass-card scroll-reveal hero-top-info" style={{
         display: 'flex',
         gap: '4rem',
         padding: '2rem 3rem',

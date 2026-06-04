@@ -321,3 +321,76 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
   vertical-align: middle;
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 0 16px;
+  }
+  
+  .heading-primary {
+    font-size: 2.2rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    margin-top: 32px;
+    margin-bottom: 24px;
+  }
+
+  .glass-card {
+    padding: 20px;
+  }
+  
+  /* Make all specific multi-column grids stack into single column */
+  .grid-cols-2, .grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Flex classes that should convert to columns on mobile */
+  .responsive-flex {
+    display: flex;
+    flex-direction: column !important;
+  }
+  
+  /* Remove right borders and add bottom borders when stacked */
+  .responsive-border-right {
+    border-right: none !important;
+    border-bottom: 1px solid var(--glass-border-light);
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+  }
+
+  /* Specific tweaks for small screens */
+  .hero-player-img {
+    height: 100% !important;
+    max-height: 350px !important;
+    right: -20px !important;
+    object-position: top center !important;
+  }
+  
+  .hero-container {
+    height: auto !important;
+    min-height: 400px !important;
+  }
+  
+  .hero-text-container {
+    margin-top: 20px !important;
+  }
+  
+  .hero-country-name {
+    font-size: 3.5rem !important;
+  }
+  
+  /* Spotlight specifics */
+  .spotlight-left {
+    min-height: 200px !important;
+  }
+  
+  /* Top info row on Hero */
+  .hero-top-info {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+  }
+}

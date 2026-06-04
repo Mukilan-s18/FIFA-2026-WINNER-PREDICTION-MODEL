@@ -34,10 +34,10 @@ export default function Spotlight({ teams }) {
   return (
     <div className="scroll-reveal" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
       <h3 className="section-title" style={{ marginTop: 0 }}>{t('Team Spotlight')}</h3>
-      <div className="glass-card flex" style={{ padding: 0, overflow: 'hidden', alignItems: 'stretch', flex: 1, position: 'relative' }}>
+      <div className="glass-card flex responsive-flex" style={{ padding: 0, overflow: 'hidden', alignItems: 'stretch', flex: 1, position: 'relative' }}>
         
         {/* Left Side: Cinematic Player Images (Crossfading) */}
-        <div style={{ flex: 1, position: 'relative', minHeight: '280px', borderRight: '1px solid var(--glass-border-light)' }}>
+        <div className="spotlight-left responsive-border-right" style={{ flex: 1, position: 'relative', minHeight: '280px', borderRight: '1px solid var(--glass-border-light)' }}>
           {teams.map((teamData, index) => {
             const teamNameLower = teamData.team.toLowerCase();
             const spotlightImage = customImages.includes(teamNameLower) 
