@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="banner.png" alt="FIFA 2026 Prediction Model Banner" width="100%" />
+  <img src="docs/assets/banner.png" alt="FIFA 2026 Prediction Model Banner" width="100%" />
 
   <h1>🏆 FIFA 2026 World Cup Predictor & Simulator</h1>
   
