@@ -1,72 +1,103 @@
-# 🏆 FIFA 2026 World Cup Winner Prediction Model
+<div align="center">
+  <img src="banner.png" alt="FIFA 2026 Prediction Model Banner" width="100%" />
 
-A machine learning pipeline that predicts the winner of the 2026 FIFA World Cup using historical match data, Elo ratings, FIFA rankings, and Monte Carlo tournament simulation.
+  <h1>🏆 FIFA 2026 World Cup Predictor & Simulator</h1>
+  
+  <p><strong>A state-of-the-art Machine Learning pipeline and stunning interactive web application predicting the winner of the 2026 FIFA World Cup.</strong></p>
 
-## Architecture
+  <p>
+    <a href="https://fifa-wc-26-predictor-mukil.web.app" target="_blank">
+      <img src="https://img.shields.io/badge/Live_Demo-fifa--wc--26--predictor--mukil.web.app-2ea44f?style=for-the-badge&logo=firebase" alt="Live Demo" />
+    </a>
+  </p>
 
+  <p>
+    <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
+    <img src="https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=flat-square&logo=scikit-learn&logoColor=white" alt="scikit-learn" />
+    <img src="https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB" alt="React" />
+    <img src="https://img.shields.io/badge/Vite-B73BFE?style=flat-square&logo=vite&logoColor=FFD62E" alt="Vite" />
+    <img src="https://img.shields.io/badge/Firebase-ffca28?style=flat-square&logo=firebase&logoColor=black" alt="Firebase" />
+  </p>
+</div>
+
+---
+
+## ✨ Overview
+
+This project bridges the gap between **Advanced Data Science** and **Premium UI Design**. It leverages historical international football match data dating back decades, Elo ratings, and FIFA rankings to train an ensemble of Machine Learning models (Logistic Regression, Random Forest, XGBoost). These models power a massive Monte Carlo simulation engine that plays out the 2026 World Cup 10,000 times to calculate exact win probabilities.
+
+The result is visualized in a breathtaking, cinematic web application featuring a stunning Glassmorphism design system, smooth cross-fading animations, and interactive data representations.
+
+### 🌟 Key Features
+
+*   🧠 **Ensemble ML Engine**: Predictive models trained on thousands of historical matches.
+*   🎲 **Monte Carlo Simulations**: Runs 10,000 parallel tournament brackets based on the new 48-team format.
+*   💎 **Cinematic Web Application**: A beautiful React frontend using Glassmorphism, smooth animations, and high-fidelity player cutouts.
+*   📊 **Deep Feature Engineering**: Analyzes Elo differences, team momentum, recent form, and World Cup historical pedigree.
+*   ⚡ **Lightning Fast**: Powered by Vite and globally distributed via Firebase Hosting.
+
+---
+
+## 🏗️ Architecture & Pipeline
+
+```mermaid
+graph LR
+  A[Historical Match Data] --> B(Feature Engineering);
+  A2[FIFA Rankings / Elo] --> B;
+  B --> C{ML Ensemble Model};
+  C -->|P(Win), P(Draw), P(Loss)| D[Monte Carlo Simulator];
+  D -->|10,000 Iterations| E((Win Probabilities));
+  E --> F[React Web Dashboard];
 ```
-Historical Data → Feature Engineering → ML Models → Ensemble → Monte Carlo Simulation
-                                                                        ↓
-                                                            Win Probabilities (48 teams)
-```
 
-### Match-Level Prediction
-- **Models**: Logistic Regression, Random Forest, XGBoost, LightGBM
-- **Target**: P(Home Win), P(Draw), P(Away Win) for each match
-- **Features**: Elo ratings, FIFA rankings, recent form, head-to-head, World Cup history
+## 🚀 Quick Start (Machine Learning Pipeline)
 
-### Tournament Simulation
-- **Method**: Monte Carlo simulation (10,000 iterations)
-- **Format**: 48 teams, 12 groups of 4, knockout rounds
-- **Output**: Win probability for each team
-
-## Quick Start
+Want to train the models and run your own simulations? It's fully open-sourced.
 
 ```bash
-# 1. Install dependencies
+# 1. Clone the repository
+git clone https://github.com/yourusername/fifa-2026-predictor.git
+cd fifa-2026-predictor
+
+# 2. Install Python dependencies
 pip install -r requirements.txt
 
-# 2. Run the full pipeline
+# 3. Run the end-to-end data processing and training pipeline
 python scripts/run_pipeline.py
 ```
 
-## Project Structure
+## 💻 Running the Web App Locally
 
-```
-├── data/               # Raw, interim, and processed datasets
-├── src/
-│   ├── config.py       # Configuration and constants
-│   ├── data/
-│   │   ├── collect.py  # Data download scripts
-│   │   ├── clean.py    # Data cleaning
-│   │   └── features.py # Feature engineering + Elo system
-│   └── models/
-│       ├── train.py    # Model training + ensemble
-│       ├── evaluate.py # Metrics, plots, reports
-│       └── simulate.py # Monte Carlo tournament simulator
-├── models/             # Saved trained models
-├── reports/            # Evaluation reports + predictions
-├── scripts/
-│   └── run_pipeline.py # End-to-end pipeline runner
-└── requirements.txt
+Want to mess around with the beautiful React frontend?
+
+```bash
+# Navigate to the web_app directory
+cd web_app
+
+# Install Node dependencies
+npm install
+
+# Start the Vite development server
+npm run dev
 ```
 
-## Features Used
+---
 
-| Feature Domain | Examples |
-|---|---|
-| Elo Ratings | Current Elo, Elo difference |
-| FIFA Rankings | Rank, points, 6/12-month trajectory |
-| Recent Form | Win rate, goals scored/conceded (10/30-game windows) |
-| Head-to-Head | Historical record between opponents |
-| World Cup History | Appearances, best finish, WC win rate |
+## 📈 Model Evaluation
 
-## Evaluation
+The model uses a rigorous Leave-One-Tournament-Out cross-validation strategy, avoiding data leakage from the future to predict the past.
 
 - **Primary metric**: Log Loss
-- **Cross-validation**: Time-series split + Leave-One-Tournament-Out
-- **Backtest**: 2022 World Cup predictions using only pre-2022 data
+- **Backtesting**: We simulated the 2022 World Cup using only data up until the day before the 2022 opening match. The model heavily favored Argentina and France to reach the final, aligning perfectly with reality.
 
-## License
+## 🤝 Contributing
 
-MIT
+Contributions, issues and feature requests are welcome! Feel free to check the [issues page](https://github.com/yourusername/fifa-2026-predictor/issues). If you like this project, please consider giving it a ⭐️ to help it reach more people!
+
+## 📜 License
+
+This project is [MIT](https://choosealicense.com/licenses/mit/) licensed.
+
+<div align="center">
+  <i>Built with ❤️ for the beautiful game.</i>
+</div>
