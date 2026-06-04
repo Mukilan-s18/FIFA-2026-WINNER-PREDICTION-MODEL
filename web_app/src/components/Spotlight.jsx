@@ -22,7 +22,7 @@ export default function Spotlight({ teams }) {
 
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % teams.length);
-    }, 7000);
+    }, 4000);
     return () => clearInterval(interval);
   }, [teams, cacheVersion]);
 
@@ -51,7 +51,7 @@ export default function Spotlight({ teams }) {
                   backgroundImage: `url('${spotlightImage}')`,
                   backgroundSize: 'cover', backgroundPosition: 'top center',
                   opacity: index === currentIndex ? 1 : 0,
-                  transition: 'opacity 1.5s ease-in-out',
+                  transition: 'opacity 0.8s ease-in-out',
                   zIndex: index === currentIndex ? 1 : 0
                 }}
               />
@@ -75,7 +75,7 @@ export default function Spotlight({ teams }) {
                   padding: '1.5rem',
                   opacity: index === currentIndex ? 1 : 0,
                   visibility: index === currentIndex ? 'visible' : 'hidden',
-                  transition: 'opacity 1s ease-in-out, visibility 1s',
+                  transition: 'opacity 0.5s ease-in-out, visibility 0.5s',
                   pointerEvents: index === currentIndex ? 'auto' : 'none',
                   zIndex: index === currentIndex ? 1 : 0
                 }}
