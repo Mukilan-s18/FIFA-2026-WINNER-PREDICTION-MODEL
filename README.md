@@ -45,7 +45,7 @@ graph LR
   A[Historical Match Data] --> B(Feature Engineering);
   A2[FIFA Rankings / Elo] --> B;
   B --> C{ML Ensemble Model};
-  C -->|P(Win), P(Draw), P(Loss)| D[Monte Carlo Simulator];
+  C -->|Win, Draw, Loss Probs| D[Monte Carlo Simulator];
   D -->|10,000 Iterations| E((Win Probabilities));
   E --> F[React Web Dashboard];
 ```
