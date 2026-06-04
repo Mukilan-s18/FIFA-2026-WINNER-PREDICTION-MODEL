@@ -6,13 +6,13 @@ import base64
 
 # --- Page Config ---
 st.set_page_config(
-    page_title="FIFA 2026 Winner Prediction | Apex Pitch",
+    page_title="FIFA 2026 Winner Prediction",
     page_icon="🏆",
     layout="wide",
     initial_sidebar_state="collapsed"
 )
 
-# --- Custom CSS (Apex Pitch Identity) ---
+# --- Custom CSS ---
 # Deep midnight: #111417
 # Electric blue: #00e5ff
 # Gold highlight: #FFD700
@@ -194,7 +194,7 @@ st.markdown("<p style='color: #94A3B8; margin-bottom: 20px;'>Top 20 Teams by sim
 top_20 = preds.head(20).copy()
 top_20['Win Prob (%)'] = top_20['win_prob'] * 100
 
-# Altair Chart heavily customized for Apex Pitch theme
+# Altair Chart heavily customized for the theme
 chart = alt.Chart(top_20).mark_bar(
     cornerRadiusTopRight=3,
     cornerRadiusBottomRight=3,
@@ -277,6 +277,6 @@ if squads is not None:
 st.markdown("""
 <div style="text-align: center; margin-top: 50px; color: #94A3B8; font-size: 0.9rem;">
     Powered by Advanced Machine Learning & 10,000 Monte Carlo Simulations.<br>
-    <span style="color: #00e5ff;">Apex Pitch Design System</span>
+    <span style="color: #00e5ff;">Premium Design System</span>
 </div>
 """, unsafe_allow_html=True)
