@@ -1,38 +1,25 @@
+import { getCountryInfo, getStarPlayer } from '../utils/playerData';
+
 export default function Hero({ topTeam }) {
   if (!topTeam) return null;
   const winProb = (topTeam.win_prob * 100).toFixed(1);
   const finalProb = (topTeam.final_prob * 100).toFixed(1);
 
-  // Heuristic: The Golden Boot winner usually comes from the team that makes it the furthest (most matches played).
-  // We predict the star forward of the highest probability team to win the Golden Boot.
-  const getStarPlayer = (team) => {
-    const stars = {
-      'Spain': 'Lamine Yamal',
-      'Argentina': 'Lionel Messi',
-      'France': 'Kylian Mbappé',
-      'England': 'Harry Kane',
-      'Brazil': 'Vinícius Júnior',
-      'Portugal': 'Cristiano Ronaldo',
-      'Netherlands': 'Cody Gakpo',
-      'Germany': 'Jamal Musiala',
-      'Colombia': 'Luis Díaz',
-      'Croatia': 'Luka Modrić'
-    };
-    return stars[team] || 'Top Goalscorer';
-  };
-
   const goldenBoot = getStarPlayer(topTeam.team);
+  const { code } = getCountryInfo(topTeam.team);
+  const flagUrl = code ? `https://flagcdn.com/w320/${code}.png` : null;
 
   return (
-    <div className="scroll-reveal" style={{
-      position: 'relative',
-      height: '600px',
-      borderRadius: '24px',
-      overflow: 'hidden',
-      marginBottom: '60px',
-      boxShadow: '0 20px 50px rgba(0,0,0,0.5)',
-      marginTop: '20px'
-    }}>
+    <>
+      <div className="scroll-reveal" style={{
+        position: 'relative',
+        height: '600px',
+        borderRadius: '24px',
+        overflow: 'hidden',
+        marginBottom: '30px',
+        boxShadow: '0 20px 50px rgba(0,0,0,0.5)',
+        marginTop: '20px'
+      }}>
       {/* Background Image with Parallax-like positioning */}
       <div style={{
         position: 'absolute',
@@ -77,19 +64,23 @@ export default function Hero({ topTeam }) {
           Our advanced machine learning ensemble model has analyzed over 30,000 international matches to bring you the most accurate predictions for the FIFA 2026 World Cup.
         </p>
       </div>
+      </div>
 
       <div className="glass-card scroll-reveal" style={{
-        position: 'absolute',
-        bottom: '15px',
-        right: '15px',
         display: 'flex',
-        gap: '2rem',
-        padding: '1.5rem 2rem',
-        zIndex: 3
+        gap: '4rem',
+        padding: '2rem 3rem',
+        marginBottom: '60px',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexWrap: 'wrap'
       }}>
         <div className="flex-col">
           <span style={{ fontSize: '0.9rem', textTransform: 'uppercase', fontWeight: 700, color: '#FFFFFF', letterSpacing: '1px', textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>Favorite</span>
-          <span className="text-gold" style={{ fontSize: '2.5rem', fontFamily: 'var(--font-heading)', lineHeight: 1.2 }}>{topTeam.team.toUpperCase()}</span>
+          <span className="text-gold" style={{ fontSize: '2.5rem', fontFamily: 'var(--font-heading)', lineHeight: 1.2, display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            {flagUrl && <img src={flagUrl} alt="" style={{ width: '45px', height: '30px', objectFit: 'cover', borderRadius: '4px', boxShadow: '0 2px 4px rgba(0,0,0,0.5)' }} />}
+            {topTeam.team.toUpperCase()}
+          </span>
         </div>
         <div className="flex-col">
           <span style={{ fontSize: '0.9rem', textTransform: 'uppercase', fontWeight: 700, color: '#FFFFFF', letterSpacing: '1px', textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>Win Probability</span>
@@ -99,11 +90,38 @@ export default function Hero({ topTeam }) {
           <span style={{ fontSize: '0.9rem', textTransform: 'uppercase', fontWeight: 700, color: '#FFFFFF', letterSpacing: '1px', textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>Reach Final</span>
           <span style={{ fontSize: '2.5rem', fontFamily: 'var(--font-heading)', lineHeight: 1.2 }}>{finalProb}%</span>
         </div>
-        <div className="flex-col">
-          <span style={{ fontSize: '0.9rem', textTransform: 'uppercase', fontWeight: 700, color: '#FFFFFF', letterSpacing: '1px', textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>Golden Boot</span>
-          <span className="text-gold" style={{ fontSize: '1.8rem', fontFamily: 'var(--font-heading)', lineHeight: 1.2, textShadow: '0 0 10px rgba(255, 215, 0, 0.3)', whiteSpace: 'nowrap' }}>{goldenBoot}</span>
+        <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '15px' }}>
+          <div className="flex-col">
+            <span style={{ fontSize: '0.9rem', textTransform: 'uppercase', fontWeight: 700, color: '#FFFFFF', letterSpacing: '1px', textShadow: '0 2px 4px rgba(0,0,0,0.8)' }}>Golden Boot</span>
+            <span className="text-gold" style={{ fontSize: '2.5rem', fontFamily: 'var(--font-heading)', lineHeight: 1.2, textShadow: '0 0 10px rgba(255, 215, 0, 0.3)', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+              {flagUrl && <img src={flagUrl} alt="" style={{ width: '45px', height: '30px', objectFit: 'cover', borderRadius: '4px', boxShadow: '0 2px 4px rgba(0,0,0,0.5)' }} />}
+              {goldenBoot}
+            </span>
+          </div>
+          {['brazil', 'germany', 'argentina', 'colombia', 'portugal', 'spain', 'france', 'england', 'netherlands', 'croatia'].includes(topTeam.team.toLowerCase()) && (
+            <img 
+              src={`/${topTeam.team.toLowerCase()}_custom_cutout.png`} 
+              onError={(e) => { 
+                if (!e.target.dataset.fallback) {
+                  e.target.dataset.fallback = true;
+                  e.target.src = `/${topTeam.team.toLowerCase()}_cutout.png`;
+                } else {
+                  e.target.style.display = 'none';
+                }
+              }}
+              alt="Player Cutout" 
+              style={{ 
+                height: '110px', 
+                width: 'auto',
+                objectFit: 'contain',
+                objectPosition: 'bottom center',
+                filter: 'drop-shadow(0px 4px 6px rgba(0,0,0,0.5))',
+                margin: '-20px 0'
+              }} 
+            />
+          )}
         </div>
       </div>
-    </div>
+    </>
   );
 }

@@ -32,7 +32,7 @@ export default function TournamentProbabilities({ data }) {
             </tr>
           </thead>
           <tbody>
-            {top10.map((team, idx) => (
+            {top10.map((team) => (
               <tr key={team.team}>
                 <td style={{ padding: '16px 0', borderBottom: '1px solid var(--glass-border-light)', fontWeight: 600 }}>
                   <div style={{ display: 'flex', alignItems: 'center' }}>
