@@ -97,7 +97,3 @@ Contributions, issues and feature requests are welcome! Feel free to check the [
 ## 📜 License
 
 This project is [MIT](https://choosealicense.com/licenses/mit/) licensed.
-
-<div align="center">
-  <i>Built with ❤️ for the beautiful game.</i>
-</div>
